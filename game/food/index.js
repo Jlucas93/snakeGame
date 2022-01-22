@@ -1,10 +1,12 @@
 import { gameboard, genarateRandomBoardPosition } from '../board/index.js'
-import {  colision as snakeColision } from '../snake/index.js'
+import {  colision as snakeColision, expedSnake } from '../snake/index.js'
 
 let foodPosition = genarateRandomPosition();
+const expensionSnkae = 1;
 
 export function update(){
     if(snakeColision(foodPosition)){
+        expedSnake(expensionSnkae);
         foodPosition = genarateRandomPosition();
     }
 }

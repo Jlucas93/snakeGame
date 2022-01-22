@@ -1,14 +1,22 @@
 import { getInputDirection } from './input.js';
 import { gameboard } from '../board/index.js'
 
-export const snakeSpeed = 3;
+export const snakeSpeed = 6;
+
+let newSegment;
 
 const snakeBody = [
     {x: 11, y: 11},
   ]
 
   export function update(){
+    addSegment();
     const inputDirection = getInputDirection();
+
+    //movimentar os segmentos
+    for(let i = snakeBody.length -2; i >= 0;  i--) {
+      snakeBody[i + 1] = { ...snakeBody [i] };
+    }
 
     // fazer a cabeça andar
     snakeBody[0].x += inputDirection.x;
@@ -38,3 +46,31 @@ const snakeBody = [
     })
 
   }
+export function expedSnake(amount){
+  newSegment = amount;
+}
+
+export function addSegment(){
+  if (newSegment > 0){
+    snakeBody.push({
+      ...snakeBody[snakeBody.length - 1],
+    })
+    newSegment -= 1;
+  }
+}
+
+export function getSnakeHead() {
+  return snakeBody[0];
+}
+
+export function selfColision(){
+  
+  const sankeHead = snakeBody[0];
+
+  return snakeBody.some((segment, index) => {
+    if(index === 0)  return false;
+
+    return sankeHead.x === segment.x && sankeHead.y === segment.y; 
+  })
+      
+}

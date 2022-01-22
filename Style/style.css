@@ -36,7 +36,7 @@
     border: 0.25vmin solid black;
   }
 
-  #teste{
+  #header{
     width: 100vw;
     height: 100px;
     background-color: rgb(65, 65, 65);
@@ -48,7 +48,7 @@
     
   }
 
-  #teste h1{
+  #header h1{
     color: lightblue;
 
   }

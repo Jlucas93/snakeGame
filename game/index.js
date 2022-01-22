@@ -1,12 +1,23 @@
-import { snakeSpeed, update as updateSnake, draw as drawSnake } from './snake/index.js'
-
-import{ update as updateFood, draw as drawFood} from './food/index.js'
-import { gameboard } from './board/index.js';
+import { snakeSpeed, update as updateSnake, draw as drawSnake, getSnakeHead, selfColision } from './snake/index.js';
+import{ update as updateFood, draw as drawFood} from './food/index.js';
+import { gameboard, isOutsideBoard } from './board/index.js';
 
 let lastTimeRender = 0;
 
+let gameOver = false;
 
 function main(currentTime) {
+
+  if(gameOver){
+    if(confirm("Game Over!")){
+      window.location.reload();
+    }
+    else{
+      alert("Não seja um mal perdedor");
+      window.requestAnimationFrame(main);
+    }
+    return;
+  }
       
     window.requestAnimationFrame(main);
   
@@ -18,18 +29,26 @@ function main(currentTime) {
   
     update();
   
-    draw();
+    draw();   
+
   }
 
   function update() {
     gameboard.innerHTML = '';
     updateSnake();
-    updateFood()
+    updateFood();
+    checkGameOver();
   }
   
   function draw() {
     drawSnake();
-    drawFood()
+    drawFood();
   };
+
+  function checkGameOver(){
+    if( isOutsideBoard(getSnakeHead()) || selfColision()){
+      gameOver = true;
+    }
+  }
 
   window.requestAnimationFrame(main)
