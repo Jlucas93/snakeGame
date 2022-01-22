@@ -5,7 +5,6 @@ export const snakeSpeed = 3;
 
 const snakeBody = [
     {x: 11, y: 11},
-    {x: 11, y: 12},
   ]
 
   export function update(){

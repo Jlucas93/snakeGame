@@ -19,6 +19,7 @@
     background: rgb(65, 65, 65);
     height: 100vmin;
     width: 100vmin;
+    margin-bottom: 20px;
     display: grid;
   
     grid-template-rows: repeat(21, 1fr);
