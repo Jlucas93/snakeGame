@@ -27,12 +27,12 @@
   }
   
   .snake {
-    background-color: lightblue;
+    background-color: rgb(61, 231, 242);
     border: 0.25vmin solid black;
   }
   
   .food {
-    background-color: yellow;
+    background-color: rgb(187, 24, 228);
     border: 0.25vmin solid black;
   }
 
@@ -49,6 +49,6 @@
   }
 
   #header h1{
-    color: lightblue;
+    color: rgb(61, 231, 242);
 
   }

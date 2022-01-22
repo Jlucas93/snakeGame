@@ -13,8 +13,8 @@ function main(currentTime) {
       window.location.reload();
     }
     else{
-      alert("Não seja um mal perdedor");
-      window.requestAnimationFrame(main);
+      alert("Não seja um mal perdedor :(");
+      window.location.reload();
     }
     return;
   }
@@ -29,7 +29,7 @@ function main(currentTime) {
   
     update();
   
-    draw();   
+    draw();
 
   }
 
@@ -50,5 +50,4 @@ function main(currentTime) {
       gameOver = true;
     }
   }
-
   window.requestAnimationFrame(main)
