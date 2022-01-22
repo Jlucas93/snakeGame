@@ -2,7 +2,6 @@ import { getInputDirection } from './input.js';
 import { gameboard } from '../board/index.js'
 
 export const snakeSpeed = 6;
-
 let newSegment;
 
 const snakeBody = [

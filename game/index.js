@@ -1,9 +1,8 @@
-import { snakeSpeed, update as updateSnake, draw as drawSnake, getSnakeHead, selfColision } from './snake/index.js';
+import { snakeSpeed, update as updateSnake, draw as drawSnake, getSnakeHead, selfColision} from './snake/index.js';
 import{ update as updateFood, draw as drawFood} from './food/index.js';
 import { gameboard, isOutsideBoard } from './board/index.js';
 
 let lastTimeRender = 0;
-
 let gameOver = false;
 
 function main(currentTime) {
@@ -50,4 +49,6 @@ function main(currentTime) {
       gameOver = true;
     }
   }
+
+
   window.requestAnimationFrame(main)
