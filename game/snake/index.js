@@ -45,7 +45,7 @@ const snakeBody = [
     })
 
   }
-export function expedSnake(amount){
+export function expendSnake(amount){
   newSegment = amount;
 }
 
